@@ -9,11 +9,11 @@ public class App
         // Mes taisam seit musu uzdevumus   
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Write a message: ");
+        System.out.println("Whats your nameAd");
 
         String input = scanner.nextLine();
 
-        System.out.println(input);
+        System.out.println("Hi " + input);
 
     }
     
