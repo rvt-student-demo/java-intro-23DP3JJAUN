@@ -7,9 +7,9 @@ public class Account {
     private double balance;
     private String owner;
 
-    public Account(String owner, double balance) {
-        this.balance= balance;
-        this.owner = owner;
+    public Account(String intowner, double intbalance) {
+        this.balance= intbalance;
+        this.owner = intowner;
     }
      
     public void deposit(double amount) {

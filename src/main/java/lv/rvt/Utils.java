@@ -1,33 +1,28 @@
 package lv.rvt;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+public class NumberRange {
+    public static void main(String[] args) {
+        List<Double> numbers = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
 
-public class Utils {
-    private static Path getFilePath(String filename) {
-        try {
-            URL resourceUrl = App.class.getClassLoader().getResource(filename);
-            if (resourceUrl == null) {
-                throw new FileNotFoundException("File not found: " + filename);
+        System.out.println("Ievadi skaitļus (-1, lai beigtu):");
+        while (true) {
+            double number = scanner.nextDouble();
+            if (number == -1) {
+                break;
             }
-            return Paths.get(resourceUrl.toURI());
-        } catch (Exception e) {
-            e.printStackTrace();
+            numbers.add(number);
         }
-        return null;
-    }
-    public static BufferedReader getReader(String filename) throws IOException {
-       return Files.newBufferedReader(getFilePath(filename));
-    }
 
-    public static BufferedWriter getWriter(String filename) throws IOException {
-       return Files.newBufferedWriter(getFilePath(filename), StandardOpenOption.APPEND);
+        System.out.print("No kura indeksa? ");
+        int startIndex = scanner.nextInt();
+        System.out.print("Līdz kuram indeksam? ");
+        int endIndex = scanner.nextInt();
+
+        for (int i = startIndex; i <= endIndex; i++) {
+            System.out.println(numbers.get(i));
+        }
+
+        scanner.close();
     }
 }
