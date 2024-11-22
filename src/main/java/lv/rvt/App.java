@@ -20,6 +20,5 @@ public class App {
         System.out.println("End state");
         System.out.println(artosAccount);
         System.out.println(artosSwissAccount);
-
     }
-}
+
